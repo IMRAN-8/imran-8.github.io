@@ -74,24 +74,11 @@ Or use VS Code Live Server.
 
 ---
 
-## 📌 Future Improvements
-
-- [ ] React + Vite version
-- [ ] Tailwind CSS migration
-- [ ] Dynamic GitHub project integration
-- [ ] Codeforces statistics
-- [ ] Blog section
-- [ ] Research publications
-- [ ] Better animations
-- [ ] SEO improvements
-
----
-
 ## 📫 Contact
 
 **Md. Imran Hosen**
 
-📧 Email: your.email@example.com
+📧 Email: imranhosen3315@gmail.com
 
 🌐 Website: https://imran-8.github.io
 
