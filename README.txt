@@ -1,22 +1,106 @@
-Md. Imran Hosen Portfolio Starter
+# 🌐 Personal Portfolio Website
 
-What to edit first:
-1. Replace profile.jpg with your final portrait if needed.
-2. Replace resume.pdf with your real resume.
-3. Open script.js and change the contact email if you want.
-4. Upload all files in this folder to the root of your GitHub repository.
+This repository contains the source code for my personal portfolio website, built to showcase my academic background, technical skills, projects, and research interests.
 
-GitHub Pages setup:
-- Repo name: imran-8.github.io
-- Upload all files to the root
-- Settings > Pages > Deploy from a branch > main / root
-- Wait a few minutes for the site to go live
+🔗 **Live Website:** https://imran-8.github.io
 
-Files:
-- index.html
-- style.css
-- script.js
-- profile.jpg
-- resume.pdf
-- favicon.svg
-- robots.txt
+---
+
+## 👨‍💻 About Me
+
+I'm **Md. Imran Hosen**, an undergraduate student in the Department of Information and Communication Technology (ICT) at **Mawlana Bhashani Science and Technology University (MBSTU)**.
+
+My primary interests include:
+
+- 🤖 Artificial Intelligence
+- 💻 Competitive Programming
+- ⚙️ Software Engineering
+- 🌐 Internet of Things (IoT)
+
+I enjoy building practical software, solving algorithmic problems, and continuously learning modern technologies.
+
+---
+
+## ✨ Website Features
+
+- 🌙 Dark / Light Mode
+- 📱 Fully Responsive Design
+- 🎨 Clean Academic UI
+- 📄 Downloadable Resume
+- 🚀 Featured Projects
+- 🎓 Education Timeline
+- 🧠 Research Interests
+- 📬 Contact Section
+- ⚡ Optimized for GitHub Pages
+
+---
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Google Fonts
+- GitHub Pages
+
+---
+
+## 📂 Project Structure
+
+```
+.
+├── index.html
+├── style.css
+├── script.js
+├── profile.jpg
+├── resume.pdf
+├── favicon.svg
+└── robots.txt
+```
+
+---
+
+## 🚀 Running Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/IMRAN-8/imran-8.github.io.git
+```
+
+Open `index.html` in your browser.
+
+Or use VS Code Live Server.
+
+---
+
+## 📌 Future Improvements
+
+- [ ] React + Vite version
+- [ ] Tailwind CSS migration
+- [ ] Dynamic GitHub project integration
+- [ ] Codeforces statistics
+- [ ] Blog section
+- [ ] Research publications
+- [ ] Better animations
+- [ ] SEO improvements
+
+---
+
+## 📫 Contact
+
+**Md. Imran Hosen**
+
+📧 Email: your.email@example.com
+
+🌐 Website: https://imran-8.github.io
+
+💻 GitHub: https://github.com/IMRAN-8
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+Feel free to explore the code for learning purposes.
