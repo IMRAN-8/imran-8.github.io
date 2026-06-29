@@ -1,60 +1,161 @@
-const root = document.documentElement;
-const themeToggle = document.getElementById('themeToggle');
-const menuToggle = document.getElementById('menuToggle');
-const nav = document.getElementById('nav');
-const toTop = document.getElementById('toTop');
+// ===============================
+// Portfolio Website Script
+// Md. Imran Hosen
+// Version 1.1
+// ===============================
 
-const storedTheme = localStorage.getItem('theme');
+const root = document.documentElement;
+
+const themeToggle = document.getElementById("themeToggle");
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("nav");
+const toTop = document.getElementById("toTop");
+
+// ===============================
+// THEME
+// ===============================
+
+// Default = Dark Mode
+const storedTheme = localStorage.getItem("theme");
+
 if (storedTheme) {
-  root.dataset.theme = storedTheme;
+    if (storedTheme === "dark") {
+        root.dataset.theme = "dark";
+    }
+} else {
+    // First visit
+    root.dataset.theme = "dark";
 }
 
-themeToggle.addEventListener('click', () => {
-  const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  if (nextTheme === 'light') {
-    delete root.dataset.theme;
-    localStorage.setItem('theme', 'light');
-  } else {
-    root.dataset.theme = 'dark';
-    localStorage.setItem('theme', 'dark');
-  }
-});
+// Toggle Theme
+themeToggle.addEventListener("click", () => {
 
-menuToggle.addEventListener('click', () => {
-  nav.classList.toggle('open');
-});
+    if (root.dataset.theme === "dark") {
 
-nav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => nav.classList.remove('open'));
-});
+        delete root.dataset.theme;
+        localStorage.setItem("theme", "light");
 
-const revealItems = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.12 });
+    } else {
 
-revealItems.forEach(el => observer.observe(el));
+        root.dataset.theme = "dark";
+        localStorage.setItem("theme", "dark");
 
-const sections = document.querySelectorAll('section[id]');
-const navLinks = nav.querySelectorAll('a');
-
-const scrollSpy = () => {
-  const y = window.scrollY + 110;
-
-  sections.forEach(section => {
-    const top = section.offsetTop;
-    const bottom = top + section.offsetHeight;
-    const id = section.getAttribute('id');
-
-    if (y >= top && y < bottom) {
-      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
     }
-  });
 
-  toTop.classList.toggle('show', window.scrollY > 450);
-};
+});
 
-window.addEventListener('scroll', scrollSpy, { passive: true });
+// ===============================
+// MOBILE MENU
+// ===============================
+
+menuToggle.addEventListener("click", () => {
+
+    nav.classList.toggle("open");
+
+});
+
+// Close menu after clicking a link
+nav.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("open");
+
+    });
+
+});
+
+// ===============================
+// SCROLL REVEAL
+// ===============================
+
+const revealItems = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
+
+revealItems.forEach(item => observer.observe(item));
+
+// ===============================
+// SCROLL SPY
+// ===============================
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = nav.querySelectorAll("a");
+
+function scrollSpy() {
+
+    const scrollPosition = window.scrollY + 110;
+
+    sections.forEach(section => {
+
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        const id = section.getAttribute("id");
+
+        if (scrollPosition >= top && scrollPosition < bottom) {
+
+            navLinks.forEach(link => {
+
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + id
+                );
+
+            });
+
+        }
+
+    });
+
+    // Back To Top Button
+    if (window.scrollY > 450) {
+
+        toTop.classList.add("show");
+
+    } else {
+
+        toTop.classList.remove("show");
+
+    }
+
+}
+
+window.addEventListener("scroll", scrollSpy, {
+    passive: true
+});
+
 scrollSpy();
+
+// ===============================
+// SMOOTH PAGE LOAD
+// ===============================
+
+window.addEventListener("load", () => {
+
+    document.body.classList.add("loaded");
+
+});
+
+// ===============================
+// END
+// ===============================
